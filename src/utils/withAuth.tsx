@@ -6,11 +6,11 @@ const withAuth = (page: () => JSX.Element) => {
 	const router = useRouter()
 
 	if (isFetchingUser) {
-		return "loading ... "
+		return <h2>"loading ... "</h2>
 	}
 
 	if (user) {
-		return page
+		return page()
 	}
 
 	router.push(`/login?next=${router.asPath}`)

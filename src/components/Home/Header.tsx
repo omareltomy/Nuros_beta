@@ -8,11 +8,11 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-      <div className="bg-zinc-900 w-full text-zinc-100 min-h-screen relative ">
+      <div className="bg-zinc-900 w-full text-zinc-100 max-h-screen relative z-[2] ">
           <Image src="/images/Header.png" alt="header Image" fill className='z-[-1] ' />
       <NavBar />
       <MaxWidthWrapper>
-        <main className="w-full text-center pt-[100px]">
+        <main className="w-full text-center h-max">
           <h1 className="flex flex-col gap-5 text-7xl font-normal mb-10">
             <span>Because mental</span>
             <span>health matters</span>
@@ -36,9 +36,9 @@ const Header = () => {
             </li>
           </ul>
 
-          <section className="flex justify-between mt-[100px]">
+          <section className="flex justify-between ">
             <article>
-              <h2 className="text-3xl font-normal text-left mb-5 max-w-sm">
+              <h2 className="text-2xl font-normal text-left mb-5 max-w-sm">
                 A mental healthcare system founded on monetizing altruism
               </h2>
               <div className="w-[200px] h-[1px] border-t-2 border-zinc-500 mb-5" />
@@ -60,7 +60,7 @@ const Header = () => {
               </div>
             </article>
             <article className="border-l-2 border-zinc-500 pl-4">
-              <h2 className="text-3xl font-normal text-left mb-5 max-w-xs">
+              <h2 className="text-2xl font-normal text-left mb-5 max-w-xs">
                 We are here to help you get through the hardest times
               </h2>
               <p className="text-lg text-zinc-500 font-normal text-left max-w-xs">

@@ -1,4 +1,4 @@
-const apiURL = import.meta.env.VITE_APP_API_URL;
+const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
 interface ClientOptions {
   data?: any;

@@ -4,7 +4,7 @@ import MaxWidthWrapper from "utils/MaxWidthWraper";
 const NavBar = () => {
     return (
       <MaxWidthWrapper>
-        <header className="flex items-center py-4 pt-8">
+        <header className="flex items-center py-4 px-10">
           <span className="mr-auto h-10">
             <svg
               className="w-full h-full"
