@@ -1,9 +1,9 @@
 import Link from "next/link";
-import MaxWidthWrapper from "utils/MaxWidthWraper";
+import MaxWidthWrapper from "components/common/MaxWidthWraper";
 
 const NavBar = () => {
     return (
-      <MaxWidthWrapper>
+      // <MaxWidthWrapper>
         <header className="flex items-center py-4 px-10">
           <span className="mr-auto h-10">
             <svg
@@ -50,7 +50,7 @@ const NavBar = () => {
             </ul>
           </nav>
         </header>
-      </MaxWidthWrapper>
+      // </MaxWidthWrapper>
     );
   }
 export default NavBar;

@@ -2,7 +2,7 @@ import Video, { ConnectOptions, LocalTrack, Room } from "twilio-video";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 // @ts-ignore
-window.TwilioVideo = Video;
+// window.TwilioVideo = Video;
 
 export default function useRoom(
   localTracks: LocalTrack[],
@@ -37,7 +37,7 @@ export default function useRoom(
           });
 
           // @ts-ignore
-          window.twilioRoom = newRoom;
+          // window.twilioRoom = newRoom;
 
           setIsConnecting(false);
 

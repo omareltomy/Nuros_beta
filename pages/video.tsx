@@ -4,7 +4,7 @@ import Menu from "components/video/Menu";
 import Room from "components/video/Room";
 import useRoomState from "hooks/video/use-room-state";
 
-export default function Video() {
+const Video = () => {
   const roomState = useRoomState();
 
   return (
@@ -17,3 +17,7 @@ export default function Video() {
     </div>
   );
 }
+
+Video.auth = true
+
+export default Video

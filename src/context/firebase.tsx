@@ -23,7 +23,6 @@ type FirebaseStateType = {
 
 // Init
 if (!firebase.apps.length) {
-  console.log("fb config", getFireBaseConfig())
   firebase.initializeApp(getFireBaseConfig());
 }
 const FirebaseContext = createContext<FirebaseStateType | undefined>(undefined);
@@ -191,6 +190,7 @@ function FirebaseProvider({ children }: FirebaseProviderPropsType) {
  * Provides access to auth state and functions.
  */
 function useFirebase() {
+  console.log("in here")
   const context = useContext(FirebaseContext);
 
   if (context === undefined) {

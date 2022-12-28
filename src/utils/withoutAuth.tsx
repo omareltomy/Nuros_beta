@@ -2,19 +2,21 @@ import { useFirebase } from 'context/firebase'
 import { useRouter } from 'next/router'
 import isServer from './IsServer'
 
-const withAuth = (page: () => JSX.Element) => {
+const withoutAuth = (page: () => JSX.Element) => {
 	const { user, isFetchingUser, error } = useFirebase()
 	const router = useRouter()
+
+	console.log("in without auth", user)
 
 	if (isFetchingUser || isServer()) {
 		return <h2>"loading ... "</h2>
 	}
 
-	if (user) {
+	if (!user) {
 		return page()
 	}
 
-	router.push(`/login?next=${router.asPath}`)
+	router.replace(`/profile`)
 }
 
-export default withAuth
+export default withoutAuth

@@ -23,9 +23,9 @@ const queryClient = new QueryClient({
 export const RootProvider = ({ children }: RootProviderProps) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <FirebaseProvider>
+      {/* <FirebaseProvider> */}
         {children}
-      </FirebaseProvider>
+      {/* </FirebaseProvider> */}
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

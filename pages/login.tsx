@@ -1,22 +1,13 @@
 import LoginForm from "components/LoginForm";
 import { useFirebase } from "context/firebase";
-
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import toast from "react-hot-toast";
 
 const Login = () => {
   const auth = useFirebase();
 
-  const { error, setError } = auth;
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (error) {
-      toast.error(error);
-      setError(null);
-    }
-  }, [error, setError]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,5 +31,7 @@ const Login = () => {
     />
   );
 };
+
+Login.noAuth = true
 
 export default Login;

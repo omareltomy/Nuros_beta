@@ -3,7 +3,6 @@ import ProfileView from "components/Profile/ProfileView";
 
 import { useFirebase } from "context/firebase";
 import { useFetchProfile } from "hooks/api/use-profile";
-import withAuth from "utils/withAuth";
 
 const Profile = () => {
 	const { user, token } = useFirebase()
@@ -15,4 +14,6 @@ const Profile = () => {
 	return <ProfileView profile={data.profile} />;
 }
 
-export default withAuth(Profile)
+Profile.auth = true
+
+export default Profile
