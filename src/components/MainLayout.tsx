@@ -7,7 +7,7 @@ const MainLayout = ({ children, title, className }: IProps) => {
   return (
     <main className={clsx('w-full text-center pt-10', className)}>
 			{!!title && <h1 className="text-2xl font-medium underline">{title}</h1>}
-      <div className="w-full max-w-2xl pt-[100px] mx-auto px-4">{children}</div>
+      <div className="w-full max-w-2xl pt-[50px] mx-auto px-4">{children}</div>
     </main>
   );
 };

@@ -4,6 +4,7 @@ import MainLayout from 'components/MainLayout';
 import { useRouter } from 'next/router';
 import { useFirebase } from 'context/firebase';
 import { useQueryClient } from '@tanstack/react-query';
+import Link from 'next/link';
 
 type IProps = ComponentProps<"div"> & { profile: IProfile }
 
@@ -28,6 +29,7 @@ const ProfileView = ({ profile }: IProps) => {
         <div className='flex gap-2 my-10'>
           <button className='btn' onClick={() => push(`/video?user=${otherUserId}`)}>call user2</button>
           <button className='btn' onClick={() => handleLogout()}>logout</button>
+          <Link href="/" className='btn'>Home</Link>
         </div>
       </div>
     </MainLayout>

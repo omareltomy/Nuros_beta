@@ -5,9 +5,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 const Home = () => {
   return (
-   <LandingLayout>
-    <HeroSection />
-   </LandingLayout>
+    <LandingLayout>
+      <HeroSection />
+    </LandingLayout>
   );
 };
 

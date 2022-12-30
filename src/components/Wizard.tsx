@@ -8,14 +8,14 @@ type WizardProps = ComponentProps<"div"> & {
   children: React.ReactNode;
 };
 
-export const WizardPage = ({ children, title }: { children: React.ReactNode, title: string }) => (
+export const WizardPage = ({ children, title }: { children: React.ReactNode, title?: string }) => (
   <div>
-    <h2 className="text-lg font-bold mb-10 underline">{title}</h2>
+    {/* <h2 className="text-lg font-bold mb-5 underline">{title}</h2> */}
     <div className="w-full">{children}</div>
   </div>
 );
 
-const WizardContext = createContext<any>({});
+export const WizardContext = createContext<any>({});
 
 /**
  * Wizard component
@@ -25,6 +25,8 @@ const Wizard: React.FC<WizardProps> = ({ onSubmit, submitting, children }) => {
   const [formValues, setValues] = useState<any | undefined>(undefined);
   const activePage = React.Children.toArray(children)[page];
   const isLastPage = page === React.Children.count(children) - 1;
+  console.log("children: ", React.Children.toArray(children));
+  console.log("children2: ", children);
 
   // next page
   const next = (values: any) => {
@@ -54,7 +56,7 @@ const Wizard: React.FC<WizardProps> = ({ onSubmit, submitting, children }) => {
       onSubmit={handleSubmit}
       initialValues={formValues}
       render={({ handleSubmit, values }) => (
-        <form onSubmit={handleSubmit} className="flex flex-col justify-between border-[4px] border-zinc-600 h-[500px] overflow-y-auto rounded-xl py-4 px-[50px]">
+        <form onSubmit={handleSubmit} className="flex flex-col ring-1 ring-zinc-300 justify-between rounded-xl py-8 px-[50px]">
           <WizardContext.Provider value={values}>
             {activePage}
           </WizardContext.Provider>
@@ -65,7 +67,7 @@ const Wizard: React.FC<WizardProps> = ({ onSubmit, submitting, children }) => {
                 className="bg-zinc-500 text-white px-4 py-2 rounded-md mr-4"
                 onClick={previous}
               >
-               Back
+               prev
               </button>
             )}
             <button
@@ -77,7 +79,7 @@ const Wizard: React.FC<WizardProps> = ({ onSubmit, submitting, children }) => {
                 "loading ..."
               ) : (
                 <>
-                  {!isLastPage && "Next"} {isLastPage && "Continue"}
+                  {!isLastPage && "Next"} {isLastPage && "Submit"}
                 </>
               )}
             </button>

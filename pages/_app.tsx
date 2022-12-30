@@ -14,9 +14,14 @@ export default function App({ Component, pageProps }: AppProps) {
         <RootProvider>
           <Toaster />
           <AuthGuard>
-            <VideoProvider>
-              <Component {...pageProps} />
-            </VideoProvider>
+            {
+              Component?.useVideo ?
+                (
+                  <VideoProvider>
+                    <Component {...pageProps} />
+                  </VideoProvider>
+              ) : <Component {...pageProps} />
+            }
           </AuthGuard>
         </RootProvider>
       </FirebaseProvider>

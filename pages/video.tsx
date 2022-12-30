@@ -19,5 +19,6 @@ const Video = () => {
 }
 
 Video.auth = true
+Video.useVideo = true
 
 export default Video
